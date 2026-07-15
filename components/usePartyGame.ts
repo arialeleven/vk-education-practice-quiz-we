@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import PartySocket from "partysocket";
 import type { StateMessage } from "@/lib/game";
 
-// Opens a WebSocket to the PartyKit room (room === game code) and tracks state.
 export function usePartyGame(roomCode: string) {
   const [state, setState] = useState<StateMessage | null>(null);
   const socketRef = useRef<PartySocket | null>(null);

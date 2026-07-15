@@ -1,9 +1,7 @@
-# Keeps the free Supabase project awake (it pauses after ~7 days of inactivity),
-# so the "working product" link is live when reviewers open it.
 name: keepalive
 on:
   schedule:
-    - cron: "0 6 */3 * *"   # every 3 days
+    - cron: "0 6 */3 * *"
   workflow_dispatch:
 jobs:
   ping:

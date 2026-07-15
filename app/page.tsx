@@ -11,9 +11,6 @@ export default async function Home() {
       <div className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-violet-400">
         квиз в реальном времени
       </div>
-      <h1 className="mb-6 text-6xl font-black leading-none tracking-tight">
-        Быстрый. <span className="text-violet-400">Живой.</span> Твой.
-      </h1>
       <p className="mb-10 max-w-md text-lg text-slate-400">
         Организатор собирает квиз и запускает комнату. Участники заходят по коду и
         отвечают синхронно — кто вернее и быстрее, тот и в топе.

@@ -1,7 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
-// Refreshes the auth session on every request and keeps cookies in sync.
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });
   const supabase = createServerClient(
@@ -22,7 +21,6 @@ export async function updateSession(request: NextRequest) {
       },
     }
   );
-  // IMPORTANT: verifies the token with the auth server
   await supabase.auth.getUser();
   return response;
 }

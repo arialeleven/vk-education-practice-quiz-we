@@ -5,17 +5,15 @@ import { TimerRing } from "./TimerRing";
 import { Leaderboard } from "./Leaderboard";
 import { TILES, type Quiz } from "@/lib/game";
 
-// Host ("ведущий") screen. Sends control messages; the server owns the timing.
 export function HostRoom({ code, hostId, quiz, quizId }: {
   code: string; hostId: string; quiz: Quiz; quizId?: string;
 }) {
   const { state, send } = usePartyGame(code);
 
-  // load the quiz into the room once connected
   useEffect(() => {
     const t = setTimeout(() => send({ type: "host_init", hostId, quiz, quizId }), 400);
     return () => clearTimeout(t);
-  }, [hostId, quiz, quizId]); // eslint-disable-line
+  }, [hostId, quiz, quizId]);
 
   if (!state) return <Center>Подключение к комнате…</Center>;
   const q = state.question;

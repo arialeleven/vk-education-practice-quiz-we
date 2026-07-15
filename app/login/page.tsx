@@ -21,7 +21,6 @@ async function signUp(formData: FormData) {
     options: { data: { username: String(formData.get("email")).split("@")[0] } },
   });
   if (error) redirect("/login?error=" + encodeURIComponent(error.message));
-  // if email confirmation is ON, the user must confirm before signing in
   redirect("/dashboard");
 }
 

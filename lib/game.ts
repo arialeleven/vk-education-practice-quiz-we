@@ -1,4 +1,3 @@
-// Shared game types + scoring (transport-agnostic). Mirror of quiz-party/src/*.
 export type QuestionType = "single" | "multiple";
 
 export interface Question {
@@ -36,7 +35,6 @@ export interface StateMessage {
   youAnswered: boolean;
 }
 
-// visual language for answers: colour + shape (works for colour-blind users too)
 export const TILES = [
   { bg: "bg-rose-500", text: "text-white", shape: "▲" },
   { bg: "bg-sky-500", text: "text-white", shape: "◆" },

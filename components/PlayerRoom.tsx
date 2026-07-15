@@ -5,7 +5,6 @@ import { TimerRing } from "./TimerRing";
 import { Leaderboard } from "./Leaderboard";
 import { TILES } from "@/lib/game";
 
-// Player screen. Can answer only while the server keeps the window open.
 export function PlayerRoom({ code, name, userId }: {
   code: string; name: string; userId?: string;
 }) {
@@ -15,7 +14,7 @@ export function PlayerRoom({ code, name, userId }: {
   useEffect(() => {
     const t = setTimeout(() => send({ type: "join", name, userId }), 400);
     return () => clearTimeout(t);
-  }, [name, userId]); // eslint-disable-line
+  }, [name, userId]);
 
   useEffect(() => setPending([]), [state?.qIndex]);
 

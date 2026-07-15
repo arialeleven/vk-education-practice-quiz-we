@@ -28,7 +28,6 @@ export default async function Dashboard() {
     .from("quizzes").select("id, title, category, created_at")
     .order("created_at", { ascending: false });
 
-  // history: sessions I hosted + games I played
   const { data: hosted } = await supabase
     .from("game_sessions").select("id, code, status, started_at, quizzes(title)")
     .eq("host", user.id).order("started_at", { ascending: false }).limit(10);
